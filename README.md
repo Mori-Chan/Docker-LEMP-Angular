@@ -7,6 +7,8 @@ http://localhost:5050/
 http://localhost:6600/
 でAngularのアプリケーションが見れます。
 
+※外付けHDD等で行うと、Dockerの権限の都合上、Volumeが正しく行えません。
+
 ちなみに、Angularのプロジェクトは、
 開発を始める前に、
 npm install
