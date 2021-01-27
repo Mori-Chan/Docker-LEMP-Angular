@@ -1,5 +1,5 @@
 # Docker-LEMP-Angular
-これCloneして
+これCloneして、
 docker-compose up -d --build
 を行えば、
 http://localhost:5050/
