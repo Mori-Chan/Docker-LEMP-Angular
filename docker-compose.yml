@@ -39,7 +39,7 @@ services:
   phpmyadmin:
     image: phpmyadmin/phpmyadmin:latest
     ports:
-      - 8888:80
+      - 8899:80
     depends_on:
       - db
 volumes:
