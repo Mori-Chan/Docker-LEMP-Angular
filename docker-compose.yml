@@ -1,13 +1,15 @@
 version: "3"
 services:
   nginx:
-    build: ./nginx
+    # build: ./nginx
+    image: nginx:latest
     ports:
       - 5050:80
       - 6600:79
     volumes:
       - ./nginx/nginx.conf:/etc/nginx/conf.d/default.conf
       - ./app:/var/www/php
+      - ./nginx/angular/my-portfolio/dist/out:/var/www/html
     depends_on:
       - php
       - angular
@@ -22,6 +24,9 @@ services:
 
   angular:
     build: ./nginx/angular/my-portfolio
+    volumes:
+      - ./nginx/angular/my-portfolio/dist/out:/var/www/html
+    command: npm run build -- --output-path=./dist/out --configuration production
     environment:
       TZ: "Asia/Tokyo"
     depends_on:
